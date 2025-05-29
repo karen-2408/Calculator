@@ -36,14 +36,20 @@ def get_operation():
         print("Invalid choice. Please select a valid option.")
         return get_operation()
 
+def get_good_number(anynum):
+    while True:
+        try:
+            return float(input(anynum))
+        except ValueError:
+            print("Invalid input. Please enter a number.")
 
 
 def main():
     print("Welcome to the Advanced Calculator!")
     
     while True:
-        num1 = input("Enter the first number: ")
-        num2 = input("Enter the second number: ")
+        num1 = get_good_number("Enter the first number: ")
+        num2 = get_good_number("Enter the second number: ")
         
         operation = get_operation()
         
